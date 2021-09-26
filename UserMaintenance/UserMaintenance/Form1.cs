@@ -21,6 +21,7 @@ namespace UserMaintenance
             label1.Text = Resource1.LastName; // label1
             label2.Text = Resource1.FirstName; // label2
             button1.Text = Resource1.Add; // button1
+            button2.Text = Resource1.ToFile;
 
             // listbox1
             listBox1.DataSource = users;
@@ -33,10 +34,16 @@ namespace UserMaintenance
         {
             var u = new User()
             {
-                LastName = textBox1.Text,
-                FirstName = textBox2.Text
+                FullName = textBox1.Text + textBox2.Text
+                //FullName = textBox2.Text
             };
             users.Add(u);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.InitialDirectory = @"C:\Egyetem";
         }
     }
 }

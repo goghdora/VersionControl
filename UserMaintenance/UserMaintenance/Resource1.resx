@@ -123,7 +123,13 @@
   <data name="FirstName" xml:space="preserve">
     <value>Utónév</value>
   </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Teljes név</value>
+  </data>
   <data name="LastName" xml:space="preserve">
     <value>Vezetéknév</value>
+  </data>
+  <data name="ToFile" xml:space="preserve">
+    <value>Fájlba írás</value>
   </data>
 </root>
