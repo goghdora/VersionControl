@@ -22,6 +22,7 @@ namespace UserMaintenance
             label2.Text = Resource1.FirstName; // label2
             button1.Text = Resource1.Add; // button1
             button2.Text = Resource1.ToFile;
+            button3.Text = Resource1.Delete;
 
             // listbox1
             listBox1.DataSource = users;
@@ -44,6 +45,12 @@ namespace UserMaintenance
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.InitialDirectory = @"C:\Egyetem";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var itemToRemove = listBox1.SelectedItem;
+            users.Remove((User)itemToRemove);
         }
     }
 }
