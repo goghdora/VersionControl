@@ -103,5 +103,10 @@ namespace VaR_mutato
 
             dataGridView2.DataSource = Portfolio;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
