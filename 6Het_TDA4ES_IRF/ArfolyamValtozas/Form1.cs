@@ -22,9 +22,41 @@ namespace ArfolyamValtozas
         {
             InitializeComponent();
 
-            
-            
-            
+            var xml = new XmlDocument();
+            Rates.Clear();
+            var mnbService = new MNBArfolyamServiceSoapClient();
+            var request = new GetExchangeRatesRequestBody()
+            {
+                currencyNames = (comboBox1.SelectedItem).ToString(),
+                startDate = (dateTimePicker1.Value).ToString(),
+                endDate = (dateTimePicker2.Value).ToString()
+            };
+            var response = mnbService.GetExchangeRates(request);
+            var result = response.GetExchangeRatesResult;
+            xml.LoadXml(result);
+
+            // Végigmegünk a dokumentum fő elemének gyermekein
+            foreach (XmlElement element in xml.DocumentElement)
+            {
+                // Létrehozzuk az adatsort és rögtön hozzáadjuk a listához
+                // Mivel ez egy referencia típusú változó, megtehetjük, hogy előbb adjuk a listához és csak később töltjük fel a tulajdonságait
+                var rate = new RateData();
+                Rates.Add(rate);
+
+                // Dátum
+ //               rate.Date = DateTime.Parse(element.GetAttribute("date"));
+
+                // Valuta
+                var childElement = (XmlElement)element.ChildNodes[0];
+ //               rate.Currency = childElement.GetAttribute("curr");
+                if (childElement == null)
+                    continue;
+
+                // Érték
+                var unit = decimal.Parse(childElement.GetAttribute("unit"));
+                var value = decimal.Parse(childElement.InnerText);
+ //               if (unit != 0) rate.Value = value / unit;
+            }
 
             RefreshData();
             Fuggveny1();
