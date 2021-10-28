@@ -1,4 +1,5 @@
-﻿using ArfolyamValtozas.MnbServiceReference;
+﻿using ArfolyamValtozas.Entites;
+using ArfolyamValtozas.MnbServiceReference;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ namespace ArfolyamValtozas
 {
     public partial class Form1 : Form
     {
+        List<RateDate> Rates;
+        
 
         public Form1()
         {
@@ -33,6 +36,8 @@ namespace ArfolyamValtozas
             // Ebben az esetben a "var" a GetExchangeRatesResult property alapján kapja a típusát.
             // Ezért a result változó valójában string típusú.
             var result = response.GetExchangeRatesResult;
+
+            dataGridView1.DataSource = Rates;
         }
     }
 }
