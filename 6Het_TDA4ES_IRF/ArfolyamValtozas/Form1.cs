@@ -17,10 +17,14 @@ namespace ArfolyamValtozas
     public partial class Form1 : Form
     {
         List<RateData> Rates;
-        
+        BindingList<string> Currencies;
         public Form1()
         {
-            //InitializeComponent();
+            InitializeComponent();
+
+            
+            
+            
 
             RefreshData();
             Fuggveny1();
@@ -106,6 +110,7 @@ namespace ArfolyamValtozas
             var result = response.GetExchangeRatesResult;
 
             dataGridView1.DataSource = Rates;
+            comboBox1.DataSource = Currencies;
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
