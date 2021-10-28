@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ArfolyamValtozas.Entites
 {
-    class RateDate
+    class RateData
     {
-        DateTime Date;
-        string Currency;
-        decimal Value;
+        DateTime Date { get; set; }
+        string Currency { get; set; }
+        decimal Value { get; set; }
     }
 }
