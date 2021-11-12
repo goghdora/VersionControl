@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Ajándék_futószalag.Entities
 {
-    public class BallFactory : IToyFactory
+    class PresentFactory : IToyFactory
     {
-        public Color BallColor { get; set; }
+        public Color PresentColor { get; set; }
 
         public Toy CreateNew()
         {
-            return new Ball(BallColor);
+            return new Ball(PresentColor);
         }
     }
 }
