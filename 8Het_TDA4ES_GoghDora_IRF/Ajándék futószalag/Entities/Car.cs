@@ -5,10 +5,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Ajándék_futószalag.Entities
 {
-    public abstract class Car : Toy
+    public class Car : Toy
     {
         protected override void DrawImage(Graphics g)
         {
