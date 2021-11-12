@@ -25,7 +25,6 @@ namespace Ajándék_futószalag.Abstractions
 
         //private void DrawImage(Graphics graphics)
         //{
-        //    throw new NotImplementedException();
         //}
 
         protected abstract void DrawImage(Graphics g);
