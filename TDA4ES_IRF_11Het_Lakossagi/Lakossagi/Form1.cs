@@ -144,7 +144,7 @@ namespace Lakossagi
                 // Végigmegyünk az összes személyen
                 for (int i = 0; i < Population.Count; i++)
                 {
-                    SimStep(year, i);
+                    SimStep(year, Population[i]);
                 }
 
                 int nbrOfMales = (from x in Population
